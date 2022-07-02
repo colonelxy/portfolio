@@ -1,9 +1,9 @@
 import React, { useState, useEffect }from 'react';
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
-// import { images } from '../../constants';
+import { images } from '../../constants';
 import './About.scss';
-// import { urlFor, client } from '../../client';
+import { urlFor, client } from '../../client';
 
 // const abouts = [
 //   { title: 'Web3 Development', description: 'I am good at Web3 development.', imgUrl: images.aboutWeb3},
@@ -12,15 +12,15 @@ import './About.scss';
 // ];
 
 const About = () => {
-  // const [abouts, setAbouts] = useState([]);
+  const [abouts, setAbouts] = useState([]);
 
-  // useEffect(() => {
-  //   const query = '*[_type =="abouts"]';
+  useEffect(() => {
+    const query = '*[_type =="abouts"]';
 
-  //   client.fetch(query)
-  //   .then((data) => setAbouts(data))
+    client.fetch(query)
+      .then((data) => setAbouts(data))
 
-  // }, []);
+  }, []);
 
   return (
     <>
@@ -28,7 +28,7 @@ const About = () => {
         I know that <span>Good Dev</span> <br /> means <span>Good Biz</span>
       </h2>
       <div className='app__profiles'>
-        {/* {abouts.map((about, index) => (
+        {abouts.map((about, index) => (
           <motion.div
           whileInView={{ opacity: 1}}
           whileHover={{scale:1.1}}
@@ -41,7 +41,7 @@ const About = () => {
             <p className='p-text' style={{marginTop: 10}}>{about.description}</p>
 
           </motion.div>
-        ))} */}
+        ))}
 
       </div>
     </>
