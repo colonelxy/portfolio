@@ -1,0 +1,13 @@
+.app__works {
+    flex:1;
+    width: 100%;
+    flex-direction: column;
+}
+
+.app__work-filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+}
