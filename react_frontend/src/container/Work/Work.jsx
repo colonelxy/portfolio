@@ -19,11 +19,26 @@ const Work = () => {
         setWorks(data);
         setFilterWorks(data);
       })
-    }, [])
-  
+  }, [])
+
+ 
 
 
   const handleWorkFilter = (item) => {
+    setActiveFilter(item);
+    setAnimatedCard([{y:100, opacity: 0}]);
+
+    setTimeout(() => {
+      setAnimatedCard([{y:0, opacity:1}]);
+
+      if(item === 'All') {
+        setFilterWorks(works);
+      } else {
+        setFilterWorks(works.filter((work) => work.tags.includes(item)))
+      }
+    }, 500);
+
+
 
   }
   return (
@@ -33,7 +48,7 @@ const Work = () => {
       </h2>
 
       <div className='app__work-filter'>
-        {['Web3 Apps', 'UI/UX', 'Web App', 'Mobile App', 'AWS Cloud Solutions', 'All'].map((item, index) => (
+        {['Web3', 'Crypto', 'UI/UX', 'Web App', 'Mobile App', 'AWS Cloud Solutions', 'All'].map((item, index) => (
           <div
           key={index}
           onClick={() => handleWorkFilter(item)}
