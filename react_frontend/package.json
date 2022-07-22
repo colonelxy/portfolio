@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-icons/all-files": "^4.1.0",
     "@sanity/client": "^3.3.2",
     "@sanity/image-url": "^1.0.1",
     "@testing-library/jest-dom": "^5.16.4",
@@ -40,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "sass-graph": "^4.0.0"
   }
 }
